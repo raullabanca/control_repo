@@ -27,7 +27,7 @@ class minecraft {
   }
   
   service { 'minecraft':
-    ensure => stopped,
+    ensure => running,
     enable => true,
     require => Exec['/usr/bin/systemctl daemon-reload'],
   }
