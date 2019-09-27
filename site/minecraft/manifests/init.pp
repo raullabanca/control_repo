@@ -22,6 +22,10 @@ class minecraft {
     source => 'puppet:///modules/minecraft/minecraft.service',
   }
   
+  exec { '/usr/bin/systemctl daemon-reload':
+    refreshonly => true,
+  }
+  
   service { 'minecraft':
     ensure => stopped,
     enable => true,
